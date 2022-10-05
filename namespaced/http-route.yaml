@@ -1,0 +1,21 @@
+apiVersion: gateway.networking.k8s.io/v1alpha2
+kind: HTTPRoute
+metadata:
+  name: httpbin
+  namespace: envoy-gateway-system-1
+spec:
+  parentRefs:
+    - name: eg
+  hostnames:
+    - "www.example.com"
+  rules:
+    - backendRefs:
+        - group: ""
+          kind: Service
+          name: httpbin
+          port: 80
+          weight: 1
+      matches:
+        - path:
+            type: PathPrefix
+            value: /

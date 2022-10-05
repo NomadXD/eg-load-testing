@@ -1,0 +1,110 @@
+Name:         envoy-eg-7b678949-zkltv
+Namespace:    envoy-gateway-system
+Priority:     0
+Node:         lima-rancher-desktop/192.168.1.57
+Start Time:   Tue, 13 Sep 2022 11:48:53 +0530
+Labels:       app=envoy
+              pod-template-hash=7b678949
+Annotations:  <none>
+Status:       Running
+IP:           10.42.0.10
+IPs:
+  IP:           10.42.0.10
+Controlled By:  ReplicaSet/envoy-eg-7b678949
+Containers:
+  envoy:
+    Container ID:  docker://13ede9527af86b2409cc009604c6e904bcee7f83a65de5befa55103c84b917d4
+    Image:         envoyproxy/envoy-dev:latest
+    Image ID:      docker-pullable://envoyproxy/envoy-dev@sha256:a8af54159518718f0de144e8e72e397d83e792dc6ad7231bf9d42129093b3a04
+    Ports:         8080/TCP, 8443/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Command:
+      envoy
+    Args:
+      --service-cluster $(ENVOY_GATEWAY_NAMESPACE)
+      --service-node $(ENVOY_POD_NAME)
+      --config-yaml admin:
+        access_log_path: /dev/null
+        address:
+          socket_address:
+            address: 127.0.0.1
+            port_value: 19000
+      dynamic_resources:
+        cds_config:
+          resource_api_version: V3
+          api_config_source:
+            api_type: GRPC
+            transport_api_version: V3
+            grpc_services:
+            - envoy_grpc:
+                cluster_name: xds_cluster
+            set_node_on_first_message_only: true
+        lds_config:
+          resource_api_version: V3
+          api_config_source:
+            api_type: GRPC
+            transport_api_version: V3
+            grpc_services:
+            - envoy_grpc:
+                cluster_name: xds_cluster
+            set_node_on_first_message_only: true
+      node:
+        cluster: envoy-gateway-system
+        id: envoy-default
+      static_resources:
+        clusters:
+        - connect_timeout: 1s
+          load_assignment:
+            cluster_name: xds_cluster
+            endpoints:
+            - lb_endpoints:
+              - endpoint:
+                  address:
+                    socket_address:
+                      address: envoy-gateway
+                      port_value: 18000
+          http2_protocol_options: {}
+          name: xds_cluster
+          type: STRICT_DNS
+      layered_runtime:
+        layers:
+          - name: runtime-0
+            rtds_layer:
+              rtds_config:
+                resource_api_version: V3
+                api_config_source:
+                  transport_api_version: V3
+                  api_type: GRPC
+                  grpc_services:
+                    envoy_grpc:
+                      cluster_name: xds_cluster
+              name: runtime-0
+      
+      --log-level info
+    State:          Running
+      Started:      Tue, 13 Sep 2022 11:49:06 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:
+      ENVOY_GATEWAY_NAMESPACE:  envoy-gateway-system (v1:metadata.namespace)
+      ENVOY_POD_NAME:           envoy-eg-7b678949-zkltv (v1:metadata.name)
+    Mounts:                     <none>
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:            <none>
+QoS Class:          BestEffort
+Node-Selectors:     <none>
+Tolerations:        node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                    node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  33m   default-scheduler  Successfully assigned envoy-gateway-system/envoy-eg-7b678949-zkltv to lima-rancher-desktop
+  Normal  Pulling    33m   kubelet            Pulling image "envoyproxy/envoy-dev:latest"
+  Normal  Pulled     32m   kubelet            Successfully pulled image "envoyproxy/envoy-dev:latest" in 13.018241298s
+  Normal  Created    32m   kubelet            Created container envoy
+  Normal  Started    32m   kubelet            Started container envoy

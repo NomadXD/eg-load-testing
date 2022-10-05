@@ -1,0 +1,10 @@
+apiVersion: gateway.networking.k8s.io/v1alpha2
+kind: Gateway
+metadata:
+  name: eg2
+spec:
+  gatewayClassName: eg2
+  listeners:
+    - name: http
+      protocol: HTTP
+      port: 9090

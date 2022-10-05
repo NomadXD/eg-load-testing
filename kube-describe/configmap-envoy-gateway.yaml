@@ -1,0 +1,21 @@
+Name:         envoy-gateway-config
+Namespace:    envoy-gateway-system
+Labels:       <none>
+Annotations:  <none>
+
+Data
+====
+envoy-gateway.yaml:
+----
+apiVersion: config.gateway.envoyproxy.io/v1alpha1
+kind: EnvoyGateway
+provider:
+  type: Kubernetes
+  gateway:
+    controllerName: gateway.envoyproxy.io/gatewayclass-controller
+
+
+BinaryData
+====
+
+Events:  <none>

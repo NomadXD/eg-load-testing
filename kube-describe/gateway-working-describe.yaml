@@ -1,0 +1,70 @@
+Name:         eg
+Namespace:    default
+Labels:       <none>
+Annotations:  <none>
+API Version:  gateway.networking.k8s.io/v1beta1
+Kind:         Gateway
+Metadata:
+  Creation Timestamp:  2022-09-13T06:15:39Z
+  Generation:          1
+  Managed Fields:
+    API Version:  gateway.networking.k8s.io/v1beta1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"Scheduled"}:
+            f:lastTransitionTime:
+            f:message:
+            f:observedGeneration:
+            f:reason:
+            f:status:
+    Manager:      envoy-gateway
+    Operation:    Update
+    Subresource:  status
+    Time:         2022-09-13T06:15:39Z
+    API Version:  gateway.networking.k8s.io/v1alpha2
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .:
+          f:kubectl.kubernetes.io/last-applied-configuration:
+      f:spec:
+        .:
+        f:gatewayClassName:
+        f:listeners:
+          .:
+          k:{"name":"http"}:
+            .:
+            f:allowedRoutes:
+              .:
+              f:namespaces:
+                .:
+                f:from:
+            f:name:
+            f:port:
+            f:protocol:
+    Manager:         kubectl-client-side-apply
+    Operation:       Update
+    Time:            2022-09-13T06:15:39Z
+  Resource Version:  897
+  UID:               fbf24147-40c4-4947-93e6-c943e51fbcd1
+Spec:
+  Gateway Class Name:  eg
+  Listeners:
+    Allowed Routes:
+      Namespaces:
+        From:  Same
+    Name:      http
+    Port:      8080
+    Protocol:  HTTP
+Status:
+  Conditions:
+    Last Transition Time:  2022-09-13T06:15:39Z
+    Message:               The Gateway has been scheduled by Envoy Gateway
+    Observed Generation:   1
+    Reason:                Scheduled
+    Status:                True
+    Type:                  Scheduled
+Events:                    <none>

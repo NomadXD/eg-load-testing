@@ -1,0 +1,65 @@
+Name:                   envoy-gateway
+Namespace:              envoy-gateway-system
+CreationTimestamp:      Tue, 13 Sep 2022 11:44:29 +0530
+Labels:                 control-plane=envoy-gateway
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               control-plane=envoy-gateway
+Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:           control-plane=envoy-gateway
+  Annotations:      kubectl.kubernetes.io/default-container: envoy-gateway
+  Service Account:  envoy-gateway
+  Containers:
+   envoy-gateway:
+    Image:      envoyproxy/gateway:v0.2.0-rc1
+    Port:       <none>
+    Host Port:  <none>
+    Args:
+      server
+      --config-path=/config/envoy-gateway.yaml
+    Limits:
+      cpu:     500m
+      memory:  128Mi
+    Requests:
+      cpu:     10m
+      memory:  64Mi
+    Environment:
+      ENVOY_GATEWAY_NAMESPACE:   (v1:metadata.namespace)
+    Mounts:
+      /config from envoy-gateway-config (ro)
+   kube-rbac-proxy:
+    Image:      gcr.io/kubebuilder/kube-rbac-proxy:v0.11.0
+    Port:       8443/TCP
+    Host Port:  0/TCP
+    Args:
+      --secure-listen-address=0.0.0.0:8443
+      --upstream=http://127.0.0.1:8080/
+      --logtostderr=true
+      --v=0
+    Limits:
+      cpu:     500m
+      memory:  128Mi
+    Requests:
+      cpu:        5m
+      memory:     64Mi
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:
+   envoy-gateway-config:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      envoy-gateway-config
+    Optional:  false
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   envoy-gateway-75fb947498 (1/1 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  40m   deployment-controller  Scaled up replica set envoy-gateway-75fb947498 to 1

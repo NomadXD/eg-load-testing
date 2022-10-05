@@ -1,0 +1,51 @@
+Name:         eg
+Namespace:    
+Labels:       <none>
+Annotations:  <none>
+API Version:  gateway.networking.k8s.io/v1beta1
+Kind:         GatewayClass
+Metadata:
+  Creation Timestamp:  2022-09-13T06:15:22Z
+  Generation:          1
+  Managed Fields:
+    API Version:  gateway.networking.k8s.io/v1beta1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"Accepted"}:
+            f:lastTransitionTime:
+            f:message:
+            f:observedGeneration:
+            f:reason:
+            f:status:
+    Manager:      envoy-gateway
+    Operation:    Update
+    Subresource:  status
+    Time:         2022-09-13T06:15:22Z
+    API Version:  gateway.networking.k8s.io/v1alpha2
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .:
+          f:kubectl.kubernetes.io/last-applied-configuration:
+      f:spec:
+        .:
+        f:controllerName:
+    Manager:         kubectl-client-side-apply
+    Operation:       Update
+    Time:            2022-09-13T06:15:22Z
+  Resource Version:  893
+  UID:               0ee767b5-68d5-4500-9b68-7906861a41a2
+Spec:
+  Controller Name:  gateway.envoyproxy.io/gatewayclass-controller
+Status:
+  Conditions:
+    Last Transition Time:  2022-09-13T06:15:22Z
+    Message:               Valid GatewayClass
+    Observed Generation:   1
+    Reason:                Accepted
+    Status:                True
+    Type:                  Accepted
+Events:                    <none>

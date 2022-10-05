@@ -1,0 +1,446 @@
+2022-09-21T04:50:26.637Z	INFO	runner/runner.go:36	Using provider	{"runner": "provider", "type": "Kubernetes"}
+2022-09-21T04:50:27.391Z	INFO	kubernetes/gatewayclass.go:54	created gatewayclass controller	{"runner": "provider"}
+2022-09-21T04:50:27.391Z	INFO	kubernetes/gatewayclass.go:64	watching gatewayclass objects	{"runner": "provider"}
+2022-09-21T04:50:27.391Z	INFO	kubernetes/gateway.go:56	created gateway controller	{"runner": "provider"}
+2022-09-21T04:50:27.391Z	INFO	kubernetes/gateway.go:66	watching gateway objects	{"runner": "provider"}
+2022-09-21T04:50:27.391Z	INFO	kubernetes/httproute.go:55	created httproute controller	{"runner": "provider"}
+2022-09-21T04:50:27.391Z	INFO	kubernetes/httproute.go:93	watching httproute objects	{"runner": "provider"}
+2022-09-21T04:50:27.391Z	INFO	runner/runner.go:36	started	{"runner": "gateway-api"}
+2022-09-21T04:50:27.391Z	INFO	runner/runner.go:33	started	{"runner": "xds-translator"}
+2022-09-21T04:50:27.391Z	INFO	manager/internal.go:362	Starting server	{"runner": "provider", "path": "/metrics", "kind": "metrics", "addr": "[::]:8080"}
+2022-09-21T04:50:27.392Z	INFO	runner/runner.go:41	done initializing provider resources	{"runner": "gateway-api"}
+2022-09-21T04:50:27.392Z	INFO	runner/runner.go:40	received a notification	{"runner": "xds-translator"}
+2022-09-21T04:50:27.392Z	INFO	runner/runner.go:43	ir is nil, skipping	{"runner": "xds-translator"}
+2022-09-21T04:50:27.493Z	INFO	status/status.go:92	started status update handler	{"runner": "provider"}
+2022-09-21T04:50:27.493Z	INFO	controller/controller.go:185	Starting EventSource	{"runner": "provider", "controller": "gateway", "source": "kind source: *v1beta1.Gateway"}
+2022-09-21T04:50:27.493Z	INFO	controller/controller.go:185	Starting EventSource	{"runner": "provider", "controller": "gatewayclass", "source": "kind source: *v1beta1.GatewayClass"}
+2022-09-21T04:50:27.493Z	INFO	controller/controller.go:193	Starting Controller	{"runner": "provider", "controller": "gateway"}
+2022-09-21T04:50:27.493Z	INFO	controller/controller.go:193	Starting Controller	{"runner": "provider", "controller": "gatewayclass"}
+2022-09-21T04:50:27.493Z	INFO	controller/controller.go:185	Starting EventSource	{"runner": "provider", "controller": "httproute", "source": "kind source: *v1beta1.HTTPRoute"}
+2022-09-21T04:50:27.493Z	INFO	controller/controller.go:185	Starting EventSource	{"runner": "provider", "controller": "httproute", "source": "kind source: *v1.Service"}
+2022-09-21T04:50:27.493Z	INFO	controller/controller.go:193	Starting Controller	{"runner": "provider", "controller": "httproute"}
+2022-09-21T04:50:27.593Z	INFO	eg	kubernetes/gatewayclass.go:82	enqueueing gatewayclass	{"runner": "provider"}
+2022-09-21T04:50:27.593Z	INFO	controller/controller.go:227	Starting workers	{"runner": "provider", "controller": "gatewayclass", "worker count": 1}
+2022-09-21T04:50:27.593Z	INFO	controller/controller.go:227	Starting workers	{"runner": "provider", "controller": "gateway", "worker count": 1}
+2022-09-21T04:50:27.593Z	INFO	eg	kubernetes/gatewayclass.go:91	reconciling gatewayclass	{"runner": "provider"}
+2022-09-21T04:50:27.593Z	INFO	eg	kubernetes/gatewayclass.go:162	reconciled gatewayclass	{"runner": "provider"}
+2022-09-21T04:50:27.593Z	INFO	status/status.go:103	received a status update	{"runner": "provider", "namespace": "", "name": "eg"}
+2022-09-21T04:50:27.593Z	INFO	controller/controller.go:227	Starting workers	{"runner": "provider", "controller": "httproute", "worker count": 1}
+2022-09-21T04:50:27.593Z	INFO	kubernetes/httproute.go:122	reconciling httproute	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.593Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.604Z	INFO	eg	kubernetes/gatewayclass.go:82	enqueueing gatewayclass	{"runner": "provider"}
+2022-09-21T04:50:27.604Z	INFO	eg	kubernetes/gatewayclass.go:91	reconciling gatewayclass	{"runner": "provider"}
+2022-09-21T04:50:27.604Z	INFO	eg	kubernetes/gatewayclass.go:162	reconciled gatewayclass	{"runner": "provider"}
+2022-09-21T04:50:27.604Z	INFO	status/status.go:103	received a status update	{"runner": "provider", "namespace": "", "name": "eg"}
+2022-09-21T04:50:27.604Z	INFO	eg	status/status.go:75	status unchanged, bypassing update	{"runner": "provider"}
+2022-09-21T04:50:27.694Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.694Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.694Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.694Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.694Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.694Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.694Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.694Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.694Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.694Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.694Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.694Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.694Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.694Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:213	reconciled httproute	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:122	reconciling httproute	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.695Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:213	reconciled httproute	{"runner": "provider", "namespace": "default", "name": "route3"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:122	reconciling httproute	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.696Z	INFO	kubernetes/httproute.go:213	reconciled httproute	{"runner": "provider", "namespace": "default", "name": "route6"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:122	reconciling httproute	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.697Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:213	reconciled httproute	{"runner": "provider", "namespace": "default", "name": "route9"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:122	reconciling httproute	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:213	reconciled httproute	{"runner": "provider", "namespace": "default", "name": "route7"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:122	reconciling httproute	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.698Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:213	reconciled httproute	{"runner": "provider", "namespace": "default", "name": "route10"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:122	reconciling httproute	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.699Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.700Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.700Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.700Z	INFO	kubernetes/httproute.go:213	reconciled httproute	{"runner": "provider", "namespace": "default", "name": "route4"}
+2022-09-21T04:50:27.700Z	INFO	kubernetes/httproute.go:122	reconciling httproute	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.700Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.700Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.700Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.700Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.700Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.700Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.700Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.700Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.701Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.701Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.701Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.701Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.701Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.701Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.701Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.701Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.701Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.701Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.701Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.701Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.701Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.701Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.701Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.702Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.702Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.702Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.702Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.702Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.702Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.702Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.702Z	INFO	kubernetes/httproute.go:213	reconciled httproute	{"runner": "provider", "namespace": "default", "name": "route5"}
+2022-09-21T04:50:27.702Z	INFO	kubernetes/httproute.go:122	reconciling httproute	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.702Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.702Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.702Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.702Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.702Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.702Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.702Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:213	reconciled httproute	{"runner": "provider", "namespace": "default", "name": "route1"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:122	reconciling httproute	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.703Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:213	reconciled httproute	{"runner": "provider", "namespace": "default", "name": "route2"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:122	reconciling httproute	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.704Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.705Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.705Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.705Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.705Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.705Z	INFO	kubernetes/httproute.go:141	added httproute to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.705Z	INFO	kubernetes/httproute.go:160	added namespace to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.705Z	INFO	kubernetes/httproute.go:189	added service to resource map	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:27.705Z	INFO	kubernetes/httproute.go:213	reconciled httproute	{"runner": "provider", "namespace": "default", "name": "route8"}
+2022-09-21T04:50:28.144Z	INFO	runner/runner.go:38	started	{"runner": "infrastructure"}
+2022-09-21T04:50:28.144Z	INFO	runner/runner.go:54	started	{"runner": "xds-server"}
+2022-09-21T04:50:28.144Z	INFO	runner/runner.go:100	received a notification	{"runner": "xds-server"}
+2022-09-21T04:50:28.144Z	INFO	runner/runner.go:104	xds is nil, skipping	{"runner": "xds-server"}
+2022-09-21T04:50:28.144Z	INFO	runner/runner.go:45	received a notification	{"runner": "infrastructure"}
+2022-09-21T04:50:28.144Z	INFO	runner/runner.go:48	ir is nil, skipping	{"runner": "infrastructure"}
+2022-09-21T04:50:38.520Z	INFO	kubernetes/gateway.go:99	reconciling gateway	{"runner": "provider", "namespace": "default", "name": "eg"}
+2022-09-21T04:50:38.521Z	INFO	default.eg	kubernetes/gateway.go:157	reconciled gateway	{"runner": "provider"}
+2022-09-21T04:50:38.521Z	INFO	runner/runner.go:61	received a notification	{"runner": "gateway-api"}
+2022-09-21T04:50:38.521Z	INFO	status/status.go:103	received a status update	{"runner": "provider", "namespace": "default", "name": "eg"}
+2022-09-21T04:50:38.521Z	INFO	runner/runner.go:61	received a notification	{"runner": "gateway-api"}
+2022-09-21T04:50:38.521Z	INFO	runner/runner.go:40	received a notification	{"runner": "xds-translator"}
+2022-09-21T04:50:38.521Z	INFO	runner/runner.go:45	received a notification	{"runner": "infrastructure"}
+2022-09-21T04:50:38.521Z	INFO	runner/runner.go:61	received a notification	{"runner": "gateway-api"}
+2022-09-21T04:50:38.521Z	INFO	runner/runner.go:61	received a notification	{"runner": "gateway-api"}
+2022-09-21T04:50:38.521Z	INFO	runner/runner.go:61	received a notification	{"runner": "gateway-api"}
+2022-09-21T04:50:38.526Z	INFO	runner/runner.go:40	received a notification	{"runner": "xds-translator"}
+2022-09-21T04:50:38.526Z	INFO	runner/runner.go:100	received a notification	{"runner": "xds-server"}
+2022-09-21T04:50:38.526Z	INFO	runner/runner.go:100	received a notification	{"runner": "xds-server"}
+2022-09-21T04:50:38.536Z	INFO	kubernetes/gateway.go:99	reconciling gateway	{"runner": "provider", "namespace": "default", "name": "eg"}
+2022-09-21T04:50:38.536Z	INFO	default.eg	kubernetes/gateway.go:157	reconciled gateway	{"runner": "provider"}
+2022-09-21T04:50:38.536Z	INFO	status/status.go:103	received a status update	{"runner": "provider", "namespace": "default", "name": "eg"}
+2022-09-21T04:50:38.536Z	INFO	runner/runner.go:61	received a notification	{"runner": "gateway-api"}
+2022-09-21T04:50:38.536Z	INFO	eg.default	status/status.go:75	status unchanged, bypassing update	{"runner": "provider"}
+2022-09-21T04:50:38.536Z	INFO	runner/runner.go:40	received a notification	{"runner": "xds-translator"}
+2022-09-21T04:50:38.536Z	INFO	runner/runner.go:100	received a notification	{"runner": "xds-server"}
+2022-09-21T04:50:41.188Z	INFO	cache/logrwrapper.go:24	First discovery request on stream 1, got nodeID envoy-eg-98888767-5rtrk	{"runner": "xds-server"}
+2022-09-21T04:50:41.188Z	INFO	cache/logrwrapper.go:24	Got a new request, version_info , response_nonce , nodeID envoy-eg-98888767-5rtrk, node_version v1.24.0	{"runner": "xds-server"}
+2022-09-21T04:50:41.189Z	INFO	cache/logrwrapper.go:24	handling v3 xDS resource request, version_info , response_nonce , nodeID envoy-eg-98888767-5rtrk, node_version v1.24.0, resource_names [runtime-0], type_url type.googleapis.com/envoy.service.runtime.v3.Runtime, errorCode 0, errorMessage 	{"runner": "xds-server"}
+2022-09-21T04:50:41.189Z	INFO	cache/logrwrapper.go:24	nodeID "envoy-eg-98888767-5rtrk" requested type.googleapis.com/envoy.service.runtime.v3.Runtime[runtime-0] and known map[]. Diff [runtime-0]	{"runner": "xds-server"}
+2022-09-21T04:50:41.189Z	INFO	cache/logrwrapper.go:24	open watch 1 for type.googleapis.com/envoy.service.runtime.v3.Runtime[runtime-0] from nodeID "envoy-eg-98888767-5rtrk", version ""	{"runner": "xds-server"}
+2022-09-21T04:50:56.185Z	INFO	cache/logrwrapper.go:24	First discovery request on stream 2, got nodeID envoy-eg-98888767-5rtrk	{"runner": "xds-server"}
+2022-09-21T04:50:56.185Z	INFO	cache/logrwrapper.go:24	Got a new request, version_info , response_nonce , nodeID envoy-eg-98888767-5rtrk, node_version v1.24.0	{"runner": "xds-server"}
+2022-09-21T04:50:56.185Z	INFO	cache/logrwrapper.go:24	handling v3 xDS resource request, version_info , response_nonce , nodeID envoy-eg-98888767-5rtrk, node_version v1.24.0, resource_names [], type_url type.googleapis.com/envoy.config.cluster.v3.Cluster, errorCode 0, errorMessage 	{"runner": "xds-server"}
+2022-09-21T04:50:56.185Z	INFO	cache/logrwrapper.go:24	nodeID "envoy-eg-98888767-5rtrk" requested type.googleapis.com/envoy.config.cluster.v3.Cluster[] and known map[]. Diff []	{"runner": "xds-server"}
+2022-09-21T04:50:56.185Z	INFO	cache/logrwrapper.go:24	respond type.googleapis.com/envoy.config.cluster.v3.Cluster[] version "" with version "3"	{"runner": "xds-server"}
+2022-09-21T04:50:56.185Z	INFO	cache/logrwrapper.go:24	Sending Response on stream 2 to node envoy-eg-98888767-5rtrk	{"runner": "xds-server"}
+2022-09-21T04:50:56.190Z	INFO	cache/logrwrapper.go:24	Got a new request, version_info 3, response_nonce 1, nodeID envoy-eg-98888767-5rtrk, node_version v1.24.0	{"runner": "xds-server"}
+2022-09-21T04:50:56.190Z	INFO	cache/logrwrapper.go:24	handling v3 xDS resource request, version_info 3, response_nonce 1, nodeID envoy-eg-98888767-5rtrk, node_version v1.24.0, resource_names [], type_url type.googleapis.com/envoy.config.cluster.v3.Cluster, errorCode 0, errorMessage 	{"runner": "xds-server"}
+2022-09-21T04:50:56.190Z	INFO	cache/logrwrapper.go:24	nodeID "envoy-eg-98888767-5rtrk" requested type.googleapis.com/envoy.config.cluster.v3.Cluster[] and known map[]. Diff []	{"runner": "xds-server"}
+2022-09-21T04:50:56.190Z	INFO	cache/logrwrapper.go:24	open watch 2 for type.googleapis.com/envoy.config.cluster.v3.Cluster[] from nodeID "envoy-eg-98888767-5rtrk", version "3"	{"runner": "xds-server"}
+2022-09-21T04:50:56.190Z	INFO	cache/logrwrapper.go:24	First discovery request on stream 3, got nodeID envoy-eg-98888767-5rtrk	{"runner": "xds-server"}
+2022-09-21T04:50:56.190Z	INFO	cache/logrwrapper.go:24	Got a new request, version_info , response_nonce , nodeID envoy-eg-98888767-5rtrk, node_version v1.24.0	{"runner": "xds-server"}
+2022-09-21T04:50:56.190Z	INFO	cache/logrwrapper.go:24	handling v3 xDS resource request, version_info , response_nonce , nodeID envoy-eg-98888767-5rtrk, node_version v1.24.0, resource_names [], type_url type.googleapis.com/envoy.config.listener.v3.Listener, errorCode 0, errorMessage 	{"runner": "xds-server"}
+2022-09-21T04:50:56.190Z	INFO	cache/logrwrapper.go:24	nodeID "envoy-eg-98888767-5rtrk" requested type.googleapis.com/envoy.config.listener.v3.Listener[] and known map[]. Diff []	{"runner": "xds-server"}
+2022-09-21T04:50:56.190Z	INFO	cache/logrwrapper.go:24	respond type.googleapis.com/envoy.config.listener.v3.Listener[] version "" with version "3"	{"runner": "xds-server"}
+2022-09-21T04:50:56.190Z	INFO	cache/logrwrapper.go:24	Sending Response on stream 3 to node envoy-eg-98888767-5rtrk	{"runner": "xds-server"}
+2022-09-21T04:50:56.192Z	INFO	cache/logrwrapper.go:24	Got a new request, version_info 3, response_nonce 1, nodeID envoy-eg-98888767-5rtrk, node_version v1.24.0	{"runner": "xds-server"}
+2022-09-21T04:50:56.192Z	INFO	cache/logrwrapper.go:24	handling v3 xDS resource request, version_info 3, response_nonce 1, nodeID envoy-eg-98888767-5rtrk, node_version v1.24.0, resource_names [], type_url type.googleapis.com/envoy.config.listener.v3.Listener, errorCode 0, errorMessage 	{"runner": "xds-server"}
+2022-09-21T04:50:56.192Z	INFO	cache/logrwrapper.go:24	nodeID "envoy-eg-98888767-5rtrk" requested type.googleapis.com/envoy.config.listener.v3.Listener[] and known map[]. Diff []	{"runner": "xds-server"}
+2022-09-21T04:50:56.192Z	INFO	cache/logrwrapper.go:24	open watch 3 for type.googleapis.com/envoy.config.listener.v3.Listener[] from nodeID "envoy-eg-98888767-5rtrk", version "3"	{"runner": "xds-server"}
+2022-09-21T04:50:56.192Z	INFO	cache/logrwrapper.go:24	First discovery request on stream 4, got nodeID envoy-eg-98888767-5rtrk	{"runner": "xds-server"}
+2022-09-21T04:50:56.192Z	INFO	cache/logrwrapper.go:24	Got a new request, version_info , response_nonce , nodeID envoy-eg-98888767-5rtrk, node_version v1.24.0	{"runner": "xds-server"}
+2022-09-21T04:50:56.192Z	INFO	cache/logrwrapper.go:24	handling v3 xDS resource request, version_info , response_nonce , nodeID envoy-eg-98888767-5rtrk, node_version v1.24.0, resource_names [route_default-eg-http], type_url type.googleapis.com/envoy.config.route.v3.RouteConfiguration, errorCode 0, errorMessage 	{"runner": "xds-server"}
+2022-09-21T04:50:56.192Z	INFO	cache/logrwrapper.go:24	nodeID "envoy-eg-98888767-5rtrk" requested type.googleapis.com/envoy.config.route.v3.RouteConfiguration[route_default-eg-http] and known map[]. Diff [route_default-eg-http]	{"runner": "xds-server"}
+2022-09-21T04:50:56.192Z	INFO	cache/logrwrapper.go:24	respond type.googleapis.com/envoy.config.route.v3.RouteConfiguration[route_default-eg-http] version "" with version "3"	{"runner": "xds-server"}
+2022-09-21T04:50:56.192Z	INFO	cache/logrwrapper.go:24	Sending Response on stream 4 to node envoy-eg-98888767-5rtrk	{"runner": "xds-server"}
+2022-09-21T04:50:56.193Z	INFO	cache/logrwrapper.go:24	Got a new request, version_info 3, response_nonce 1, nodeID envoy-eg-98888767-5rtrk, node_version v1.24.0	{"runner": "xds-server"}
+2022-09-21T04:50:56.193Z	INFO	cache/logrwrapper.go:24	handling v3 xDS resource request, version_info 3, response_nonce 1, nodeID envoy-eg-98888767-5rtrk, node_version v1.24.0, resource_names [route_default-eg-http], type_url type.googleapis.com/envoy.config.route.v3.RouteConfiguration, errorCode 0, errorMessage 	{"runner": "xds-server"}
+2022-09-21T04:50:56.193Z	INFO	cache/logrwrapper.go:24	nodeID "envoy-eg-98888767-5rtrk" requested type.googleapis.com/envoy.config.route.v3.RouteConfiguration[route_default-eg-http] and known map[route_default-eg-http:{}]. Diff []	{"runner": "xds-server"}
+2022-09-21T04:50:56.193Z	INFO	cache/logrwrapper.go:24	open watch 4 for type.googleapis.com/envoy.config.route.v3.RouteConfiguration[route_default-eg-http] from nodeID "envoy-eg-98888767-5rtrk", version "3"	{"runner": "xds-server"}

@@ -17,7 +17,7 @@ function deleteHttpRoutes() {
 
 function deleteProxies() {
     echo ">>> Deleting proxies"
-    max=2
+    max=3
     for i in `seq 1 $max`
     do
       NAMESPACE="envoy-gateway-system-$i"
@@ -27,7 +27,7 @@ function deleteProxies() {
 
 function deleteGateways() {
     echo ">>> Deleting gateways"
-    max=2
+    max=10
     for i in `seq 1 $max`
     do
       NAMESPACE="envoy-gateway-system-$i"
@@ -35,6 +35,21 @@ function deleteGateways() {
     done
 }
 
+function cleanNamespaces() {
+  max=10
+  for i in `seq 1 $max`
+  do
+    NAMESPACE="envoy-gateway-system-$i"
+    kubectl delete namespace $NAMESPACE
+  done
+}
+
+function cleanCluster() {
+  kubectl delete -f "namespaced/two-namespaces/cluster.yaml"
+}
+
 
 # deleteProxies
 deleteGateways
+# cleanNamespaces
+# cleanCluster

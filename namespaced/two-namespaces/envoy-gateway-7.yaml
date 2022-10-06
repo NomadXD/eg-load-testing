@@ -43,19 +43,19 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: certgen
-  namespace: envoy-gateway-system-1
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: envoy-gateway
-  namespace: envoy-gateway-system-1
+  namespace: envoy-gateway-system-7
+# ---
+# apiVersion: v1
+# kind: ServiceAccount
+# metadata:
+#   name: envoy-gateway
+#   namespace: envoy-gateway-system-1
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: certgen
-  namespace: envoy-gateway-system-1
+  namespace: envoy-gateway-system-7
 rules:
 - apiGroups:
   - ""
@@ -70,7 +70,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: infra-manager
-  namespace: envoy-gateway-system-1
+  namespace: envoy-gateway-system-7
 rules:
 - apiGroups:
   - ""
@@ -96,7 +96,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: leader-election-role
-  namespace: envoy-gateway-system-1
+  namespace: envoy-gateway-system-7
 rules:
 - apiGroups:
   - ""
@@ -208,7 +208,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: certgen
-  namespace: envoy-gateway-system-1
+  namespace: envoy-gateway-system-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -216,13 +216,13 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: certgen
-  namespace: envoy-gateway-system-1
+  namespace: envoy-gateway-system-7
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: infra-manager
-  namespace: envoy-gateway-system-1
+  namespace: envoy-gateway-system-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -230,13 +230,13 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: envoy-gateway
-  namespace: envoy-gateway-system-1
+  namespace: envoy-gateway-system-7
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: leader-election-rolebinding
-  namespace: envoy-gateway-system-1
+  namespace: envoy-gateway-system-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -244,7 +244,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: envoy-gateway
-  namespace: envoy-gateway-system-1
+  namespace: envoy-gateway-system-7
 # ---
 # apiVersion: rbac.authorization.k8s.io/v1
 # kind: ClusterRoleBinding
@@ -281,9 +281,9 @@ metadata:
   labels:
     app.gateway.envoyproxy.io/name: envoy
     gateway.envoyproxy.io/owning-gateway-name: eg
-    gateway.envoyproxy.io/owning-gateway-namespace: envoy-gateway-system-1
-  name: envoy-envoy-gateway-system-1-eg
-  namespace: envoy-gateway-system-1
+    gateway.envoyproxy.io/owning-gateway-namespace: envoy-gateway-system-7
+  name: envoy-envoy-gateway-system-7-eg
+  namespace: envoy-gateway-system-7
 ---
 apiVersion: v1
 data:
@@ -297,7 +297,7 @@ data:
 kind: ConfigMap
 metadata:
   name: envoy-gateway-config
-  namespace: envoy-gateway-system-1
+  namespace: envoy-gateway-system-7
 ---
 apiVersion: v1
 kind: Service
@@ -305,7 +305,7 @@ metadata:
   labels:
     control-plane: envoy-gateway
   name: envoy-gateway
-  namespace: envoy-gateway-system-1
+  namespace: envoy-gateway-system-7
 spec:
   ports:
   - name: grpc
@@ -320,7 +320,7 @@ metadata:
   labels:
     control-plane: envoy-gateway
   name: envoy-gateway-metrics-service
-  namespace: envoy-gateway-system-1
+  namespace: envoy-gateway-system-7
 spec:
   ports:
   - name: https
@@ -336,7 +336,7 @@ metadata:
   labels:
     control-plane: envoy-gateway
   name: envoy-gateway
-  namespace: envoy-gateway-system-1
+  namespace: envoy-gateway-system-7
 spec:
   replicas: 1
   selector:
@@ -430,7 +430,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: certgen
-  namespace: envoy-gateway-system-1
+  namespace: envoy-gateway-system-7
 spec:
   backoffLimit: 6
   completions: 1
@@ -449,10 +449,9 @@ spec:
         name: envoy-gateway-certgen
       restartPolicy: Never
       securityContext:
-        runAsUser: 0
         # runAsGroup: 65534
         # runAsNonRoot: true
-        # runAsUser: 65534
+        runAsUser: 0
       serviceAccountName: certgen
   ttlSecondsAfterFinished: 0
 ---
@@ -465,9 +464,9 @@ metadata:
   labels:
     app.gateway.envoyproxy.io/name: envoy
     gateway.envoyproxy.io/owning-gateway-name: eg
-    gateway.envoyproxy.io/owning-gateway-namespace: envoy-gateway-system-1
-  name: envoy-envoy-gateway-system-1-eg
-  namespace: envoy-gateway-system-1
+    gateway.envoyproxy.io/owning-gateway-namespace: envoy-gateway-system-7
+  name: envoy-envoy-gateway-system-7-eg
+  namespace: envoy-gateway-system-7
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
@@ -476,7 +475,7 @@ spec:
     matchLabels:
       app.gateway.envoyproxy.io/name: envoy
       gateway.envoyproxy.io/owning-gateway-name: eg
-      gateway.envoyproxy.io/owning-gateway-namespace: envoy-gateway-system-1
+      gateway.envoyproxy.io/owning-gateway-namespace: envoy-gateway-system-7
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -488,12 +487,12 @@ spec:
       labels:
         app.gateway.envoyproxy.io/name: envoy
         gateway.envoyproxy.io/owning-gateway-name: eg
-        gateway.envoyproxy.io/owning-gateway-namespace: envoy-gateway-system-1
+        gateway.envoyproxy.io/owning-gateway-namespace: envoy-gateway-system-7
     spec:
       automountServiceAccountToken: false
       containers:
       - args:
-        - --service-cluster envoy-gateway-system-1-eg
+        - --service-cluster envoy-gateway-system-7-eg
         - --service-node $(ENVOY_POD_NAME)
         - |
           --config-yaml admin:
@@ -623,6 +622,6 @@ spec:
             path: xds-trusted-ca.json
           - key: xds-certificate.json
             path: xds-certificate.json
-          name: envoy-envoy-gateway-system-1-eg
+          name: envoy-envoy-gateway-system-7-eg
           optional: false
         name: sds
